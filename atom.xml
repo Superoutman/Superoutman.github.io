@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Superoutman.github.io</id>
+    <title>王老急</title>
+    <updated>2022-06-27T03:39:21.001Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Superoutman.github.io"/>
+    <link rel="self" href="https://Superoutman.github.io/atom.xml"/>
+    <subtitle>重拾博客的乐趣</subtitle>
+    <logo>https://Superoutman.github.io/images/avatar.png</logo>
+    <icon>https://Superoutman.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, 王老急</rights>
+    <entry>
+        <title type="html"><![CDATA[恢复群晖默认SSL证书]]></title>
+        <id>https://Superoutman.github.io/post/restore-synology-ssl-default-cert.html/</id>
+        <link href="https://Superoutman.github.io/post/restore-synology-ssl-default-cert.html/">
+        </link>
+        <updated>2018-03-13T21:59:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>原本是打算用 SSH 配置群晖的 Let’s Encrypt 证书，结果不知道哪一步出错了，没有配置成功。在被我搞乱之后，直接导致的后果就是 <strong>Mac 上的 Cloud Station Drive 客户端不能同步</strong>了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>原本是打算用 SSH 配置群晖的 Let’s Encrypt 证书，结果不知道哪一步出错了，没有配置成功。在被我搞乱之后，直接导致的后果就是 <strong>Mac 上的 Cloud Station Drive 客户端不能同步</strong>了。</p>
+<!-- more -->
+<p>开始并不知道证书会影响 Cloud Station 的同步，查找了各种资料，发邮件询问群晖工程师（没有回复我）也没能解决。郁闷两天之后，偶然发现手机客户端设置里写着 SSL 不一致，才恍然大悟。</p>
+<p>于是着手恢复 SSL 证书。由于之前我启用了自定义的域名，搞了腾讯的免费证书配合使用，所以我现在只需把现有的腾讯证书删除，导入之前群晖自带的证书备份就可以了（备份很重要啊）。</p>
+<p>原来群晖自带证书备份的时候会导出四个文件，分别是：cert.pem、privkey.pem、syno-ca-cert.pem、syno-ca-privkey.pem。恢复的话，只要导入其中两个就可以了，中间证书可以为空。需要导入的文件如下：</p>
+<figure data-type="image" tabindex="1"><img src="https://Superoutman.github.io/post-images/1656172190956.png" alt="" loading="lazy"></figure>
+<p>到这里呢，你可以看到 Cloud Station 仍然是无法同步，差点晕倒。。其实还要做最后一个步骤，就是彻底退出 Mac 上的客户端，然后重新启动。OK，现在可以正常同步了！</p>
+<hr>
+<p>群晖如何配置 Let’s Encrypt 证书，可以参考以下两篇文章：</p>
+<ul>
+<li><a href="http://www.up4dev.com/2017/09/11/synology-ssl-cert-update/">群晖 Let’s Encrypt 证书的自动更新</a></li>
+<li><a href="https://forum.51nb.com/thread-1789843-1-1.html">【原创】群晖安装并自动续期Let’s Encrypt SSL证书</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[来冒个泡]]></title>
+        <id>https://Superoutman.github.io/post/lai-mao-ge-pao.html/</id>
+        <link href="https://Superoutman.github.io/post/lai-mao-ge-pao.html/">
+        </link>
+        <updated>2018-03-07T23:22:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>太长时间没有打理这里了，已经长草。最近打算重新回归，先列几点锄草的准备工作。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>太长时间没有打理这里了，已经长草。最近打算重新回归，先列几点锄草的准备工作。</p>
+<!-- more -->
+<ol>
+<li>把博客的域名从国内迁到国外了，域名注册了 10 多年，一直不舍得放弃，算是留个纪念吧。</li>
+<li>给博客换个主题，好复古有没有。</li>
+<li>尝试使用 MWeb for Mac 发布博客。</li>
+</ol>
+<p>这么多年下来，感觉自己是虚度了，除了整个人变得更懒惰了，什么都没有长进。最后还是希望这里不要荒废吧，没事翻出来看看，也是挺有意思的。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[解决无法关闭 LilyView 权限提示的方法]]></title>
+        <id>https://Superoutman.github.io/post/allow-lilyview-access-your-home-folder.html/</id>
+        <link href="https://Superoutman.github.io/post/allow-lilyview-access-your-home-folder.html/">
+        </link>
+        <updated>2016-03-22T21:45:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>不知从什么时候开始，用 LilyView 打开图片浏览的时候，总会提示这个对话框：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>不知从什么时候开始，用 LilyView 打开图片浏览的时候，总会提示这个对话框：</p>
+ <!-- more -->
+<p><img src="https://Superoutman.github.io/post-images/1655787335366.png" alt="" loading="lazy"><br>
+以前点击一次允许，就可以全盘查看了，但这回任凭如何点击都不起作用，差点疯掉。不过，一个好消息是，以下办法可以解决：</p>
+<blockquote>
+<p>Just go to Finder, select Go &gt; Computer menu command and drag your Macintosh HD to LilyView icon in the Dock. This is done only once!</p>
+</blockquote>
+<p>大意就是，在电脑中找到 Macintosh HD 然后拖动它到 Dock 中的 LilyView 图标上（或者直接拖到上图中也可以，亲测），就可以了。</p>
+<p>这是什么奇葩招数。。不过抱着试试看的态度试了下，还真就解决了！你呢？</p>
+<p> </p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WordPress利用tags字段显示特定HTML内容]]></title>
+        <id>https://Superoutman.github.io/post/wordpress-tags-display-html-in-post.html/</id>
+        <link href="https://Superoutman.github.io/post/wordpress-tags-display-html-in-post.html/">
+        </link>
+        <updated>2015-08-10T22:15:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>当然，要实现这个功能你需要在写文章的时候打上标签，因为这个功能，是利用判断特定tag是否存在，来实现的。什么情况下会用到这个功能？比如：想在某类文章中加上特定的内容，而不影响其他文章，这就派上用场了。上代码：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>当然，要实现这个功能你需要在写文章的时候打上标签，因为这个功能，是利用判断特定tag是否存在，来实现的。什么情况下会用到这个功能？比如：想在某类文章中加上特定的内容，而不影响其他文章，这就派上用场了。上代码：</p>
+<!-- more -->
+<pre><code class="language-php">&amp;lt; ?php if (has_tag(array(‘标签1’,‘标签2’))) {echo “原创” ; } else { echo “” ; } ?&amp;gt;
+</code></pre>
+<p>以上是说，文章标签内，只要包含「标签1」，「标签2」里其中一个，即在文章中显示“原创”字样（注意替换英文引号）。</p>
+<p>以本文为实例进阶一下，在包含「打赏」标签的文章末尾处加上打赏的二维码，代码如下：</p>
+<pre><code class="language-php">&amp;lt; ?php
+	if (has_tag(array(‘Download’,’破解’,’打赏’))) {echo ‘’; } else { echo “” ; } ?&gt;
+</code></pre>
+<p>效果如下，样式什么的自己在里面随意加，想在哪加代码，就放在主循环的哪里。怎么样，还不来打个赏？</p>
+<figure data-type="image" tabindex="1"><img src="https://Superoutman.github.io/post-images/1655990393786.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sketch 导致 Mac 磁盘容量越来越少]]></title>
+        <id>https://Superoutman.github.io/post/sketch-to-mac-disk-capacity-is-reduced.html/</id>
+        <link href="https://Superoutman.github.io/post/sketch-to-mac-disk-capacity-is-reduced.html/">
+        </link>
+        <updated>2015-03-06T21:15:31.000Z</updated>
+        <summary type="html"><![CDATA[<p>在使用 Sketch 时遇到的奇葩问题，它会自动在 .DocumentRevisions-V100/.cs/ChunkStorage/ 里生成 revert to 备份，每次都会使磁盘容量迅速递增。之前还以为是系统出了问题，经历了抹盘重装，还是没能解决，近几天磁盘已用容量已达到100%了，什么都不能操作了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在使用 Sketch 时遇到的奇葩问题，它会自动在 .DocumentRevisions-V100/.cs/ChunkStorage/ 里生成 revert to 备份，每次都会使磁盘容量迅速递增。之前还以为是系统出了问题，经历了抹盘重装，还是没能解决，近几天磁盘已用容量已达到100%了，什么都不能操作了。</p>
+<!-- more -->
+<p>最后使用 DaisyDisk 查看，发现了 ChunkStorage 这个巨大文件，上网搜了一下，搜到了<a href="http://www.zhihu.com/question/27865426">知乎的这个帖子</a>，才知道，原来竟是 Sketch 导致的。</p>
+<p>目前解决的办法，是直接手动删除了 ChunkStorage 里的文件，一下腾出了 120G 的容量。。终于解决了这个让我头疼已久的问题！至于还会不会继续生成大容量备份，还有带观察。</p>
+<p>另外，我使用的 Sketch 版本（正版）号是 3.2.2</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Alfred 5岁庆生，享15％的折扣！]]></title>
+        <id>https://Superoutman.github.io/post/alfred-5-years-old-discounted.html.html/</id>
+        <link href="https://Superoutman.github.io/post/alfred-5-years-old-discounted.html.html/">
+        </link>
+        <updated>2015-02-27T18:48:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>Alfred 不用多说了，Mac 上最好用的搜索和快速启动的应用之一。目前正在以15%的折扣进行促销，活动持续到3月2日结束。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Alfred 不用多说了，Mac 上最好用的搜索和快速启动的应用之一。目前正在以15%的折扣进行促销，活动持续到3月2日结束。</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://Superoutman.github.io/post-images/1655787511803.jpg" alt="" loading="lazy"></figure>
+<p>点击购买链接后，在结账页面会看到优惠后的价格。Alfred 以往基本不参加任何 Bundle 活动，所以此次打折非常值得入手。</p>
+<p>活动页面：<a href="http://www.alfredapp.com/birthday/?utm_medium=email&amp;utm_campaign=Alfred+5th+bday++Remote+promo&amp;utm_content=Alfred+5th+bday++Remote+promo+CID_e9b23236dc08f2a0bd299d28c64f2bd2&amp;utm_source=Newsletter&amp;utm_term=15%2520discount%2520on%2520the%2520Powerpack">5 years old and 15% discounted!</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stache App Icon Redesign]]></title>
+        <id>https://Superoutman.github.io/post/stache-app-icon-redesign.html/</id>
+        <link href="https://Superoutman.github.io/post/stache-app-icon-redesign.html/">
+        </link>
+        <updated>2015-01-12T01:35:04.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://Superoutman.github.io/post-images/1655991084928.png" alt="" loading="lazy"></figure>
+<p>下载 icns 文件：<a href="http://cl.ly/3C0o0t121D0o/download/Stache.icns" title="Stache.icns">Stache.icns</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[搭建了个新网站]]></title>
+        <id>https://Superoutman.github.io/post/the-new-web-bangneeson.html/</id>
+        <link href="https://Superoutman.github.io/post/the-new-web-bangneeson.html/">
+        </link>
+        <updated>2014-05-17T21:26:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>闲着没事，搞了个 Hack Nwes 类的网站玩玩。使用的是 iNews 程序，简洁漂亮！</p>
+<p><s>站名：<strong>帮你省</strong>，地址：<a href="http://bangnee.so">http://bangnee.so</a>，以下是简介：</s></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>闲着没事，搞了个 Hack Nwes 类的网站玩玩。使用的是 iNews 程序，简洁漂亮！</p>
+<p><s>站名：<strong>帮你省</strong>，地址：<a href="http://bangnee.so">http://bangnee.so</a>，以下是简介：</s></p>
+<!-- more -->
+<blockquote>
+<h3 id="帮你省是一个什么样的网站">– 帮你省是一个什么样的网站？</h3>
+<p>帮你省是一个帮你发现身边各种科技类福利的资讯网站，本着能省则省的原则，为大家及时分享实用的优惠信息。</p>
+<h3 id="我可以做什么">– 我可以做什么？</h3>
+<p>你可以在这里及时获取最新的科技类优惠资讯，用户注册登录后还可以发布新的咨询，发表评论及参与投票等等。</p>
+<h3 id="如何快速发布文章">– 如何快速发布文章？</h3>
+<p>通过该浏览器书签按钮就可以快速发布文章标题及链接到本站上。输入框支持 Markdown 语法。</p>
+</blockquote>
+<p>目前网站刚刚上线，还没有用户呢，所以希望各位捧场，来分享你知道的福利信息，造福更多的人。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[研究Hazel进入死循环了。。]]></title>
+        <id>https://Superoutman.github.io/post/yan-jiu-hazel-jin-ru-si-xun-huan-liao.html/</id>
+        <link href="https://Superoutman.github.io/post/yan-jiu-hazel-jin-ru-si-xun-huan-liao.html/">
+        </link>
+        <updated>2014-03-18T01:22:52.000Z</updated>
+        <content type="html"><![CDATA[<blockquote class="twitter-tweet">
+  <p>
+    研究Hazel进入死循环了。。
+  </p>
+  <p>
+    &mdash; Superoutman (@Superoutman) <a href="http://ift.tt/1hvf7Iv">March 18, 2014</a>
+  </p>
+</blockquote>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我在苹果团的购机遭遇]]></title>
+        <id>https://Superoutman.github.io/post/appletuan-credibility-crisis.html/</id>
+        <link href="https://Superoutman.github.io/post/appletuan-credibility-crisis.html/">
+        </link>
+        <updated>2014-01-08T18:55:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近V2EX上集中吐槽苹果团，看到多方评论爆料加上我自己的购机经历，使我对其信誉深表怀疑。如果[这个帖子][1]不出现，这事我本来打算就不提了。既然看到了那我也凑个热闹，说说我的遭遇供大家参考。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近V2EX上集中吐槽苹果团，看到多方评论爆料加上我自己的购机经历，使我对其信誉深表怀疑。如果<a href="http://www.v2ex.com/t/96084">这个帖子</a>不出现，这事我本来打算就不提了。既然看到了那我也凑个热闹，说说我的遭遇供大家参考。</p>
+<!-- more -->
+<p>去年我在苹果团买了个iPad，拆开包装后发现屏幕上有指纹，心里略微不爽，于是在晒机贴中就提了一句。没想到我发的一堆晒机图片中，唯独带指纹的那张图片被删了，帖子通篇只是晒机，就写了一句质疑的话也被删了（我现在很怀疑其良好口碑的真实性），我继续询问这算什么意思，但是篮子没正面回答，只是以否认「那不是指纹」作为回应。没想到这种指鹿为马的事在现实中也会遇到。</p>
+<p>具体帖子详见 <a href="http://www.appletuan.com/t/4157">http://www.appletuan.com/t/4157</a></p>
+<p>不知道有没有跟我一样的朋友，选择苹果团多半是冲着卖家说的原封机去的，我想有原封情结的人应该还是比较在乎这「原封」二字的。但是没想到买到的东西却不是真正的原封机，更让人无法理解的是明明真的看见指纹并拍照了，他们却还一直强调「我们这只有原封机」。。这点我是不能接受的。连句合理的解释都没有，只拼命说自己的东西没问题，真不能让人信服。哪怕你直接说是因为要过关所以拆了重封的，那又能怎么样呢。无以评价。</p>
+<p>不过客观的说呢，其实买的东西质量是没啥问题的，既然选择港行那就得有点心里准备，既然遇到了就说明自己的RP不够好，想想也就算了。从这开始更坚定我买国行的信念了，后来我总结，像我这么爱纠结的人也只有信任官方渠道了，多花点钱买个安心吧。</p>
+<p>总之，买到好机子的朋友说明你的RP好，不较真。遇到问题的朋友呢，吃一堑长一智，下回不去买就完了。买东西就那么回事，只要自己觉得爽就好，不就图个乐呵吗。</p>
+]]></content>
+    </entry>
+</feed>
